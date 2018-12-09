@@ -21,6 +21,7 @@ class MessageList extends Component {
     });
   }
 
+
   handleSubmit(e) {
     //console.log(this.input.value
     const newMessageName = this.input.value
@@ -36,15 +37,13 @@ class MessageList extends Component {
   render() {
     return (
       <div>
-        <aside>
-            <ul className="message-list">
+            <section className="message-list">
             {
-              this.state.messages.map((message, activeRoom) =>
-                <li>{message.content}</li>
+              this.state.messages.filter(roomId).map((message, activeRoom) =>
+                <p>{message.content}</p>
               )
             }
-            </ul>
-        </aside>
+            </section>
       </div>
     );
   }
