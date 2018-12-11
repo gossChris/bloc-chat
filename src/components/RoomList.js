@@ -36,7 +36,7 @@ class RoomList extends Component {
   render() {
     return (
       <div>
-        <section>
+        <aside>
           <form onSubmit={this.handleSubmit.bind(this)}>
             <label>
               New Room Name:
@@ -47,11 +47,11 @@ class RoomList extends Component {
             <ul className="roomList">
             {
               this.state.rooms.map((room, index) =>
-                <li key={index}>{room.name}</li>
+                <li key={index} onClick={() => this.props.setActiveRoom(room)}>{room.name}</li>
               )
             }
             </ul>
-        </section>
+        </aside>
       </div>
     );
   }
