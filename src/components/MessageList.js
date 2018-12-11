@@ -21,10 +21,7 @@ class MessageList extends Component {
     });
   }
 
-<<<<<<< HEAD
-=======
 
->>>>>>> checkpoint-list-messags
   handleSubmit(e) {
     //console.log(this.input.value
     const newMessageName = this.input.value
@@ -40,7 +37,6 @@ class MessageList extends Component {
   render() {
     return (
       <div>
-<<<<<<< HEAD
         <aside>
             <ul className="message-list">
             {
@@ -50,7 +46,7 @@ class MessageList extends Component {
             }
             </ul>
         </aside>
-=======
+
             <section className="message-list">
             {
               this.state.messages.filter( (message) => this.props.activeRoom && message.roomId === this.props.activeRoom.key).map((message, activeRoom) =>
@@ -59,7 +55,6 @@ class MessageList extends Component {
               )
             }
             </section>
->>>>>>> checkpoint-list-messags
       </div>
     );
   }
