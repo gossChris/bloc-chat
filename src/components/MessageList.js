@@ -37,21 +37,10 @@ class MessageList extends Component {
   render() {
     return (
       <div>
-        <aside>
-            <ul className="message-list">
-            {
-              this.state.messages.map((message, activeRoom) =>
-                <li>{message.content}</li>
-              )
-            }
-            </ul>
-        </aside>
-
             <section className="message-list">
             {
               this.state.messages.filter( (message) => this.props.activeRoom && message.roomId === this.props.activeRoom.key).map((message, activeRoom) =>
                 <p>{"Meesage: " + message.content + " " + "Username: " + message.username}</p>
-
               )
             }
             </section>
