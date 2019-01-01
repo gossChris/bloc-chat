@@ -31,6 +31,7 @@ class App extends Component {
   }
 
   setUser(user) {
+    console.log(user)
     this.setState({
       user: user
     });
@@ -49,10 +50,12 @@ class App extends Component {
           <MessageList
           firebase={firebase}
           activeRoom={this.state.activeRoom}
+          user={this.state.user}
           />
           <User
           firebase={firebase}
           setUser={(user) => this.setUser(user)}
+          user={this.state.user}
           />
         </header>
       </div>
