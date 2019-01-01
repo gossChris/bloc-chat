@@ -44,7 +44,9 @@ class MessageList extends Component {
       <div>
             <section className="message-list">
             {
-
+              this.state.messages.filter( (message) => this.props.activeRoom && message.roomId === this.props.activeRoom.key).map((message, index) =>
+                <p key={index}>{"Meesage: " + message.content + " Username: " + message.username + " Sent at: " + this.formatTime (message.sentAt) }</p>
+              )
             }
             <form onSubmit={this.handleSubmit.bind(this)}>
               <label>
